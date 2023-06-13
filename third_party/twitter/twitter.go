@@ -4,12 +4,12 @@ import (
 	"io"
 	"net/http"
 	"regexp"
-
 	twitterscraper "github.com/n0madic/twitter-scraper"
 )
 
 func TwitterDownloader(url string) []byte {
-	//twitter
+
+
 	re := regexp.MustCompile(`status/(\d+)`)
 	match := re.FindStringSubmatch(url)
 
@@ -18,7 +18,6 @@ func TwitterDownloader(url string) []byte {
 	if err != nil {
 		panic(err)
 	}
-	//ent twitter func
 
 	resp, err := http.Get(tweet.Videos[0].URL)
 	if err != nil {
