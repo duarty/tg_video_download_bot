@@ -1,13 +1,12 @@
-trigger:
-  branches:
-    include:
-      - feature/*
-      
-jobs:
-  - job: job1
+stages:
+  - stage: stage1
     pool: 
       vmImage: 'ubuntu-latest'
-
-    steps:
-    - script: echo Primeiro azure pipeline
-    displayName: scrf
+    jobs:
+    - job: job1
+      steps:
+        - script: echo 'rodando  job1 a pelo template'
+    - job: job2
+      steps:
+        - script: echo 'rodando job2 a pelo  template'
+        
