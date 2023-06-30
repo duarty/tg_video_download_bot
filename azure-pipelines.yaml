@@ -1,0 +1,13 @@
+trigger:
+  branches:
+    include:
+      - feature/*
+      
+jobs:
+  - job: job1
+    pool: 
+      vmImage: 'ubuntu-latest'
+
+    steps:
+    - script: echo Primeiro azure pipeline
+    displayName: scrf
